@@ -2,6 +2,7 @@ package com.ezdi.redisserializer;
 
 import java.io.IOException;
 import java.util.Collections;
+import java.util.HashMap;
 
 import javax.security.auth.login.CredentialExpiredException;
 import javax.servlet.http.Cookie;
