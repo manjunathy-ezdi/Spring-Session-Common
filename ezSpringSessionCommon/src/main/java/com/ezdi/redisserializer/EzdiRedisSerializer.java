@@ -133,6 +133,10 @@ public class EzdiRedisSerializer implements RedisSerializer<Object> {
 		return (t instanceof String || t instanceof Long || t instanceof Integer 
 				|| t instanceof Boolean || t instanceof Character);
 	}
+
+	private boolean isHashMap(Object t){
+		return t instanceof HashMap;
+	}
 	
 	private boolean isSpringObject(Object t){
 		return (t instanceof DefaultSavedRequest || t instanceof SecurityContextImpl
@@ -147,6 +151,8 @@ public class EzdiRedisSerializer implements RedisSerializer<Object> {
 	}
 	
 	private boolean isValidObjectType(Object t){
-		return (t==null || isBasicDataType(t) || isSpringObject(t));	
+		return (t==null || isBasicDataType(t) || isSpringObject(t) || isHashMap(t));	
 	}
+
+	
 }
